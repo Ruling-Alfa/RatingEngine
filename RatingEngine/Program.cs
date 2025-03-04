@@ -14,6 +14,8 @@ public class Program
     {
         var builder = WebApplication.CreateSlimBuilder(args);
 
+        builder.AddKeyVaultConfig();
+
         builder.Services.AddFastEndpoints();
         builder.AddServiceDefaults();
         builder.Services.AddOpenApi();

@@ -1,8 +1,11 @@
-﻿using Infra.ExceptionHandlers.Configurations;
+﻿using Azure.Identity;
+using Infra.ExceptionHandlers.Configurations;
+using Infra.KeyVault;
 using Infra.Persistance.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace Infra.Configurations
 {
@@ -35,6 +38,14 @@ namespace Infra.Configurations
             app.UseCors("AllowAllCors");
             app.UseExceptionHandling();
             return app;
+        }
+
+        public static WebApplicationBuilder AddKeyVaultConfig(this WebApplicationBuilder webApplicationBuilder)
+        {
+            if(webApplicationBuilder.Environment.IsProduction()){
+                webApplicationBuilder.Configuration.AddAzureKeyVaultToConfig(webApplicationBuilder.Configuration);
+            }
+            return webApplicationBuilder;
         }
     }
 }
