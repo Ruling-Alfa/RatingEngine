@@ -8,6 +8,7 @@
 		<PublishAot>false</PublishAot>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 		<InvariantGlobalization>false</InvariantGlobalization>
+		<UserSecretsId>d8fa07d7-34a5-4fee-887d-9f0b9350783b</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -18,9 +19,9 @@
 
 	<ItemGroup>
 		<PackageReference Include="FastEndpoints" />
-		<PackageReference Include="Microsoft.AspNetCore.OpenApi"/>
-		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets"/>
-		<PackageReference Include="Scalar.AspNetCore"/>
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" />
+		<PackageReference Include="Scalar.AspNetCore" />
 	</ItemGroup>
 
 </Project>
