@@ -36,7 +36,7 @@ namespace RatingEngine.DomainServices
         public async ValueTask<List<ProvinceDto>?> GetProvinceByAbrivation(string abbreviation, CancellationToken ct = default)
         {
             var provinces = await _unitOfWork.Provinces.GetList(ct,
-                p => string.Equals(p.Abbreviation,abbreviation, StringComparison.InvariantCultureIgnoreCase) && p.IsActive);
+                p => p.Abbreviation == abbreviation && p.IsActive);
             if (provinces is null || !provinces.Any())
             {
                 return default;
