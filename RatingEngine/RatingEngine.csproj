@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<PublishAot>false</PublishAot>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<InvariantGlobalization>false</InvariantGlobalization>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\DomainServices\RatingEngine.DomainServices.csproj" />
+		<ProjectReference Include="..\RatingEngine.DTO\RatingEngine.DTO.csproj" />
+		<ProjectReference Include="..\RatingEngine.ServiceDefaults\RatingEngine.ServiceDefaults.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FastEndpoints" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi"/>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets"/>
+		<PackageReference Include="Scalar.AspNetCore"/>
+	</ItemGroup>
+
+</Project>
